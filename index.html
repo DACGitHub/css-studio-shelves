@@ -1,0 +1,188 @@
+<head>
+  <style>
+    :root{
+      --outline-color-1: rgb(167, 209, 68);
+      --outline-color-2: rgb(255, 88, 82);
+      --outline-color-3: rgb(31, 255, 244);
+    }
+    * { box-sizing: border-box; }
+    body{
+      background-color: #333;
+      color:#eee;
+    }
+
+    .shelves-left-1,
+    .shelves-left-2,
+    .shelves-left-3,
+    .shelves-left-4,
+    .shelves-top-left,    
+    .shelves-top-right,
+    .shelves-right-1,
+    .shelves-right-2,
+    .shelves-right-3,
+    .shelves-right-4,
+    .center
+    {      
+      background-color: var(--outline-color-1);
+      animation: pulse 30s infinite;
+      animation-direction: alternate;
+      display: flex;
+    }
+
+    @keyframes pulse {
+      0% {
+        background-color: var(--outline-color-1);
+      }
+      50% {
+        background-color: var(--outline-color-2);
+      }
+      100% {
+        background-color: var(--outline-color-3);
+      }
+    }
+
+    .center
+    {
+      flex-direction: column;  
+    }
+
+    .center div:nth-child(1) {      
+      margin-bottom:0px;
+    }
+
+    .shelves-left-1{ grid-area: shelves-left-1; }
+    .shelves-left-2{ grid-area: shelves-left-2; }
+    .shelves-left-3{ grid-area: shelves-left-3; }
+    .shelves-left-4{ grid-area: shelves-left-4; }
+    .shelves-top-left{ grid-area: shelves-top-left; }
+    .shelves-top-right{ grid-area: shelves-top-right; }
+    .shelves-right-1{ grid-area: shelves-right-1; }
+    .shelves-right-2{ grid-area: shelves-right-2; }
+    .shelves-right-3{ grid-area: shelves-right-3; }
+    .shelves-right-4{ grid-area: shelves-right-4; }
+    .speaker1{ grid-area: speaker1; }
+    .speaker2{ grid-area: speaker2; }
+    .center{ grid-area: center; }
+
+    .shelves-left-1 div, 
+    .shelves-left-2 div, 
+    .shelves-left-3 div, 
+    .shelves-left-4 div,
+    .shelves-right-1 div, 
+    .shelves-right-2 div, 
+    .shelves-right-3 div, 
+    .shelves-right-4 div,
+    .shelves-top-left div,
+    .shelves-top-right div,
+    .center div {
+      flex: 1 1 auto;
+      margin: 2px;
+    }  
+
+
+    .shelves-left-1 div:not(:first-child), 
+    .shelves-left-2 div:not(:first-child), 
+    .shelves-left-3 div:not(:first-child), 
+    .shelves-left-4 div:not(:first-child),
+    .shelves-right-1 div:not(:first-child), 
+    .shelves-right-2 div:not(:first-child), 
+    .shelves-right-3 div:not(:first-child), 
+    .shelves-right-4 div:not(:first-child),
+    .shelves-top-left div:not(:first-child),
+    .shelves-top-right div:not(:first-child)
+    {
+      margin-left: 0;
+    }      
+
+    .speaker1, .speaker2{
+      background-color: #666;
+    }
+
+    .speaker1 div, .speaker2 div{
+      width:40px;
+      height: 40px;
+      margin:40px auto;
+      border-radius: 50%;
+      background-color: #333;
+      border:2px solid #bfbfbf;
+    }
+
+    div{ background-color: #333; }
+    .shelves{
+      display: grid;
+      height: 80vh;
+      grid-gap: 6px;
+      grid-template-columns: 8fr 2fr 14fr 2fr 8fr;
+      grid-template-rows: 120px 100px 50px 150px;
+      grid-auto-rows: 200px;
+      grid-auto-flow: dense;
+      grid-template-areas: 
+        "shelves-left-1 shelves-top-left  center  shelves-top-right   shelves-right-1"
+        "shelves-left-2 speaker1          center  speaker2            shelves-right-2"
+        "shelves-left-3 speaker1          center  speaker2            shelves-right-3"
+        "shelves-left-4 speaker1          center  speaker2            shelves-right-4";   
+    }
+
+  </style>
+</head>
+<body>
+  <div class="shelves">
+    <div class="shelves-left-1">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="shelves-left-2">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="shelves-left-3">
+      <div></div>
+      <div></div>
+    </div>
+    <div class="shelves-left-4">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="shelves-top-left">
+      <div></div>
+    </div>
+    <div class="speaker1">
+      <div></div>
+    </div>
+    <div class="center">
+      <div></div>
+      <div></div>
+    </div>
+    <div class="speaker2">
+      <div></div>
+    </div>
+    <div class="shelves-top-right">
+        <div></div>
+    </div>
+    <div class="shelves-right-1">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="shelves-right-2">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="shelves-right-3">
+      <div></div>
+      <div></div>
+    </div>
+    <div class="shelves-right-4">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</div>
+</body>
